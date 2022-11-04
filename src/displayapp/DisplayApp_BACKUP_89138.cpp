@@ -26,6 +26,7 @@
 #include "displayapp/screens/Twos.h"
 <<<<<<< HEAD
 #include "displayapp/screens/Gallery.h"
+=======
 #include "displayapp/screens/Calculator.h"
 >>>>>>> MaWalla/Calc_rebase
 #include "displayapp/screens/FlashLight.h"

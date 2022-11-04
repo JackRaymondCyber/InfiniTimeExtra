@@ -23,7 +23,6 @@ static constexpr const char* newSymbol = "\xEF\x86\x85";
 
 inside `fonts`, there is a dictionary of fonts,
 and for each font there is:
-
 - sources - list of file,range(,symbols) wanted (as a dictionary of those)
 - bpp - bits per pixel.
 - size - size.

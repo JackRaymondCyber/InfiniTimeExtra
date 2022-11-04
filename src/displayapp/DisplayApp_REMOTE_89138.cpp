@@ -24,10 +24,7 @@
 #include "displayapp/screens/SystemInfo.h"
 #include "displayapp/screens/Tile.h"
 #include "displayapp/screens/Twos.h"
-<<<<<<< HEAD
-#include "displayapp/screens/Gallery.h"
 #include "displayapp/screens/Calculator.h"
->>>>>>> MaWalla/Calc_rebase
 #include "displayapp/screens/FlashLight.h"
 #include "displayapp/screens/BatteryInfo.h"
 #include "displayapp/screens/Steps.h"
@@ -457,9 +454,6 @@ void DisplayApp::LoadApp(Apps app, DisplayApp::FullRefreshDirections direction) 
       break;
     case Apps::Twos:
       currentScreen = std::make_unique<Screens::Twos>(this);
-      break;
-    case Apps::Gallery:
-      currentScreen = std::make_unique<Screens::Gallery>(this, filesystem);
       break;
     case Apps::Paint:
       currentScreen = std::make_unique<Screens::InfiniPaint>(this, lvgl, motorController);
