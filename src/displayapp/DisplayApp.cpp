@@ -24,10 +24,8 @@
 #include "displayapp/screens/SystemInfo.h"
 #include "displayapp/screens/Tile.h"
 #include "displayapp/screens/Twos.h"
-<<<<<<< HEAD
 #include "displayapp/screens/Gallery.h"
 #include "displayapp/screens/Calculator.h"
->>>>>>> MaWalla/Calc_rebase
 #include "displayapp/screens/FlashLight.h"
 #include "displayapp/screens/BatteryInfo.h"
 #include "displayapp/screens/Steps.h"
