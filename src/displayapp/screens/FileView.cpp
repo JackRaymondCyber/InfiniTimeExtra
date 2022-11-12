@@ -62,7 +62,6 @@ ImageView::ImageView(uint8_t screenID, uint8_t nScreens, DisplayApp* app, const 
   lv_img_set_src(image, path);
   lv_obj_align(image, lv_scr_act(), LV_ALIGN_CENTER, 0, 0);
 
-  ShowInfo();
 }
 
 TextView::TextView(uint8_t screenID, uint8_t nScreens, DisplayApp* app, const char* path, Pinetime::Controllers::FS& fs)
@@ -98,5 +97,4 @@ TextView::TextView(uint8_t screenID, uint8_t nScreens, DisplayApp* app, const ch
 
   fs.FileClose(&fp);
 
-  ShowInfo();
 }
