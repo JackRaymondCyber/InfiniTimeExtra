@@ -48,16 +48,26 @@ namespace Pinetime {
 
           {Symbols::paintbrush, Apps::Paint},
           {Symbols::gallery, Apps::Gallery},
+          {Symbols::calculator, Apps::Calculator},
           {Symbols::paddle, Apps::Paddle},
           {"2", Apps::Twos},
+<<<<<<< HEAD
+||||||| b56c5f25
+          {Symbols::chartLine, Apps::Motion},
+=======
+          {Symbols::gallery, Apps::Gallery},
+>>>>>>> Gallery
           {Symbols::drum, Apps::Metronome},
+
+          {Symbols::chartLine, Apps::Motion},
           {Symbols::map, Apps::Navigation},
 <<<<<<< HEAD
 
-          {Symbols::chartLine, Apps::Motion},
+          {Symbols::dice, Apps::Dice},
+||||||| b56c5f25
 =======
-          {Symbols::calculator, Apps::Calculator},
->>>>>>> MaWalla/Calc_rebase
+          {Symbols::chartLine, Apps::Motion},
+>>>>>>> Gallery
         }};
         ScreenList<nScreens> screens;
       };
