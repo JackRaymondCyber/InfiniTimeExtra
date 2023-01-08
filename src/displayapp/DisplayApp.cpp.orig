@@ -14,12 +14,12 @@
 #include "displayapp/screens/Clock.h"
 #include "displayapp/screens/FirmwareUpdate.h"
 #include "displayapp/screens/FirmwareValidation.h"
-#include "displayapp/screens/Gallery.h"
 #include "displayapp/screens/InfiniPaint.h"
 #include "displayapp/screens/Paddle.h"
 #include "displayapp/screens/StopWatch.h"
 #include "displayapp/screens/Metronome.h"
 #include "displayapp/screens/Music.h"
+#include "displayapp/screens/Calendar.h"
 #include "displayapp/screens/Navigation.h"
 #include "displayapp/screens/Notifications.h"
 #include "displayapp/screens/SystemInfo.h"
@@ -33,7 +33,6 @@
 #include "displayapp/screens/Dice.h"
 #include "displayapp/screens/PassKey.h"
 #include "displayapp/screens/Error.h"
-#include "displayapp/screens/Calculator.h"
 
 #include "drivers/Cst816s.h"
 #include "drivers/St7789.h"
@@ -472,9 +471,16 @@ void DisplayApp::LoadScreen(Apps app, DisplayApp::FullRefreshDirections directio
     case Apps::Twos:
       currentScreen = std::make_unique<Screens::Twos>(this);
       break;
+<<<<<<< HEAD
     case Apps::Gallery:
       currentScreen = std::make_unique<Screens::Gallery>(this, filesystem);
       break;
+||||||| 2607c3d7
+=======
+    case Apps::Calendar:
+      currentScreen = std::make_unique<Screens::Calendar>(this, batteryController,dateTimeController);
+      break;
+>>>>>>> calendar
     case Apps::Paint:
       currentScreen = std::make_unique<Screens::InfiniPaint>(this, lvgl, motorController);
       break;
@@ -499,19 +505,12 @@ void DisplayApp::LoadScreen(Apps app, DisplayApp::FullRefreshDirections directio
     case Apps::Steps:
       currentScreen = std::make_unique<Screens::Steps>(this, motionController, settingsController);
       break;
-<<<<<<< HEAD
     case Apps::Calculator:
-      currentScreen = std::make_unique<Screens::Calculator>(this, motorController);
+      currentScreen = std::make_unique<Screens::Calculator>(this);
       break;
     case Apps::Dice:
       currentScreen = std::make_unique<Screens::Dice>(this, motionController, motorController);
       break;
-||||||| 09db67e0
-=======
-    case Apps::Calculator:
-      currentScreen = std::make_unique<Screens::Calculator>(this);
-      break;
->>>>>>> cd4755fcd7c064996dc76cc965d0b8615848255f
   }
   currentApp = app;
 }

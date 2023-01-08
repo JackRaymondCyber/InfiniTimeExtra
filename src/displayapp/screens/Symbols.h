@@ -42,6 +42,7 @@ namespace Pinetime {
         static constexpr const char* home = "\xEF\x80\x95";
         static constexpr const char* sleep = "\xEE\xBD\x84";
         static constexpr const char* backspace = "\xEF\x95\x9A";
+        static constexpr const char* calendar = "\xEF\x81\xB3";
 
         // lv_font_sys_48.c
         static constexpr const char* settings = "\xEE\xA2\xB8";
