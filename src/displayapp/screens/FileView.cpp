@@ -73,14 +73,18 @@ TextView::TextView(uint8_t screenID, uint8_t nScreens, DisplayApp* app, const ch
   lv_obj_align(label, lv_scr_act(), LV_ALIGN_CENTER, 0, 0);
 
   lfs_info info = {0};
-  if (fs.Stat(path + 2, &info) != LFS_ERR_OK && info.type != LFS_TYPE_DIR) {
-    lv_label_set_text_static(label, "could not open file");
+  if (fs.Stat(path + 2, &info) != LFS_ERR_OK) {
+    lv_label_set_text_static(label, "could not stat file");
+    return;
+  }
+  if (info.type != LFS_TYPE_REG) {
+    lv_label_set_text_static(label, "not a file");
     return;
   }
 
-  char* buf = (char*) lv_mem_alloc(info.size);
+  buf = (char*) lv_mem_alloc(info.size);
   if (buf == nullptr) {
-    lv_label_set_text_static(label, "could not open file");
+    lv_label_set_text_static(label, "could not allocate buffer");
     return;
   }
 
@@ -92,9 +96,14 @@ TextView::TextView(uint8_t screenID, uint8_t nScreens, DisplayApp* app, const ch
   }
 
   fs.FileRead(&fp, reinterpret_cast<uint8_t*>(buf), info.size);
-  lv_label_set_text(label, buf);
-  lv_mem_free(buf);
+  lv_label_set_text_static(label, buf);
 
   fs.FileClose(&fp);
 
+}
+
+TextView::~TextView() {
+  if (buf != nullptr)
+    lv_mem_free(buf);
+  lv_obj_clean(lv_scr_act());
 }
