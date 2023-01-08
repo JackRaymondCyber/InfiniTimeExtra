@@ -14,7 +14,6 @@
 #include "displayapp/screens/Clock.h"
 #include "displayapp/screens/FirmwareUpdate.h"
 #include "displayapp/screens/FirmwareValidation.h"
-#include "displayapp/screens/Gallery.h"
 #include "displayapp/screens/InfiniPaint.h"
 #include "displayapp/screens/Paddle.h"
 #include "displayapp/screens/StopWatch.h"
@@ -499,7 +498,7 @@ void DisplayApp::LoadScreen(Apps app, DisplayApp::FullRefreshDirections directio
       currentScreen = std::make_unique<Screens::Steps>(this, motionController, settingsController);
       break;
     case Apps::Calculator:
-      currentScreen = std::make_unique<Screens::Calculator>(this, motorController);
+      currentScreen = std::make_unique<Screens::Calculator>(this);
       break;
     case Apps::Dice:
       currentScreen = std::make_unique<Screens::Dice>(this, motionController, motorController);
